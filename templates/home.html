@@ -1,0 +1,37 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>Home Page</title>
+    <style>
+        body{
+           background: rgb(red, green, blue);
+            background: linear-gradient(90deg,#f107c7,hwb(36 74% 24%),#f40333);
+    
+        }
+        form{
+            color: black;
+            width: fit-content;
+            padding: 30px;
+            background-color: white;
+            box-shadow: -20px 20px 30px black;
+            border-radius: 20px;
+            background-color: yellowgreen;
+        
+        }
+        .vi{
+            color: rgba(50, 1, 36, 0.879);
+        }
+    </style>
+{% endblock %}
+
+{% block body_block %}
+
+<center>
+    {% if username %}
+        <h1 class="vi">Welcome to Home Page MR/MS {{username}}</h1>
+    {% else %}
+        <h1>Welcome To  Home Page</h1>
+    {% endif %}
+    
+    {% endblock %}
+</center>

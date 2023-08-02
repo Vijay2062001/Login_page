@@ -1,0 +1,49 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>Registration Page</title>
+{% endblock %}
+
+{% block body_block %}
+    <style>
+        body{
+            background: rgb(red, green, blue);
+            background: linear-gradient(#2a0303,#93778e,#ac7021,rgb(86, 15, 29));
+        }
+        form{
+            color: black;
+            width: fit-content;
+            padding: 30px;
+            background-color: white;
+            box-shadow: -20px 20px 30px black;
+            border-radius: 20px;
+            background-color: #b53673;
+            transition:  .5;
+        }
+        input{
+            transition: .5s;
+        }
+        form:hover{
+            transform: translate(-20px,20px);
+            box-shadow: 40px 20px 30px black;
+        }
+        input:hover{
+            box-shadow: -5px 5px 20px #14e309;
+        }
+        h1{
+            color: wheat;
+        }
+    </style>
+
+
+<center>
+    <h1>Registration Form</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{USFO.as_p}}
+                {{PFO.as_p}}
+            <input type="submit" value="registration">
+        </form>
+    </center>
+
+{% endblock %}

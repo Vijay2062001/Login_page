@@ -1,0 +1,50 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>Login Page</title>
+    <style>
+        body{
+            background: rgb(red, green, blue);
+            background: linear-gradient(90deg,red,blue,yellow,pink);
+        }
+        form{
+            color: black;
+            width: fit-content;
+            padding: 30px;
+            background-color: white;
+            box-shadow: -20px 20px 30px black;
+            border-radius: 20px;
+            background-color: yellowgreen;
+        
+        }
+        input{
+            transition: .5s;
+        }
+        form:hover{
+            transform: translate(-20px,20px);
+            box-shadow: 40px 20px 30px black;
+        }
+        input:hover{
+            box-shadow: -5px 5px 20px hsl(349, 76%, 40%);
+        }
+    </style>
+{% endblock %}
+
+{% block body_block %}
+
+<center>
+    <h1>Login Form</h1>
+        <form method="POST">
+            {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username"><br>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"><br><br>
+            <input type="submit" value="LogIn" class="btn btn-success">
+
+            <a href="{% url 'Reset_password' %}" class="btn btn-success">reset password</a>
+        </form>
+    </center>
+
+    {% endblock %}

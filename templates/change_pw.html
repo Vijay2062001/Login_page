@@ -1,0 +1,32 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>display_details Page</title>
+    <style>
+        body{
+            background: rgb(red, green, blue);
+            background: linear-gradient(90deg,red,green,orange);
+        }
+        .vi{
+            position: relative;
+            left: 135px;
+        }
+    </style>
+{% endblock %}
+
+    {% block body_block %}
+    <center>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+        <tr>
+            <td><label for="pw">change_Password</label></td>
+            <td><input type="password" name="pw" id="pw"></td>
+        </tr>
+        <tr>
+            <td class="vi"><input type="button" value="ResetPassword"></td>
+        </tr>
+    </table>
+    </form>
+     </center>    
+     {% endblock %}

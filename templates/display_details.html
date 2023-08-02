@@ -1,0 +1,22 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>display_details Page</title>
+    <style>
+        body{
+            background: rgb(red, green, blue);
+            background: linear-gradient(orange,maroon,azure,fuchsia);
+        }
+    </style>
+{% endblock %}
+
+    {% block body_block %}
+    <center>
+        <h1 class="vi">Useranme:- {{UO.username}}</h1>
+        <h1>Useranme:- {{UO.email}}</h1>
+
+        <h1>Useranme:- {{PO.address}}</h1>
+        <h1>User Profile Picture: </h1>
+        <img src="{{PO.profile_pic.url}}" alt="" height="300px" width="300px">
+     </center>    
+     {% endblock %}

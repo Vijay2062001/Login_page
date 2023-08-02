@@ -1,0 +1,69 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>Reset Page</title>
+    <style>
+        .vi{
+            position: relative;
+            left: 150px;
+        }
+        body{
+            background: rgb(red, green, blue);
+            background: linear-gradient(90deg,fuchsia,orange,#460645,pink);
+        }
+        form{
+            color: black;
+            width: fit-content;
+            padding: 30px;
+            background-color: white;
+            box-shadow: -20px 20px 30px black;
+            border-radius: 20px;
+            background-color: yellowgreen;
+        
+        }
+        input{
+            transition: .5s;
+        }
+        form:hover{
+            transform: translate(-20px,20px);
+            box-shadow: 40px 20px 30px black;
+        }
+        input:hover{
+            box-shadow: -5px 5px 20px hwb(77 0% 87%);
+        }
+    </style>
+    {% endblock %}
+
+    {% block body_block %}
+    
+    <center>
+       
+        <h1>Reset Password </h1>
+        <form method="POST">
+            {% csrf_token %}
+
+
+            <table>
+                <tr>
+                    <td><label for="na">username</label></td>
+                    <td><input type="text" name="na" id="na"></td>
+                </tr>
+                <tr>
+                    <td><label for="pw">password</label></td>
+                    <td><input type="password" name="pw" id="pw"></td>
+                </tr>
+                <tr>  
+                    <td><label for="rpw">Re-enter password</label></td>
+                    <td><input type="password" name="rpw" id="rpw"></td>
+                </tr>
+                <tr>
+                    <td class="vi"><input type="submit" value="submit"></td>
+                </tr>
+            </table>
+        </form>
+
+    </center>
+        
+        {% endblock %}
+
+    
